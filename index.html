@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Hvem er Hvem?</title>
+</head>
+<body>
+    <h1 class="flex justify-center font-bold text-5xl p-10">Hvem er hvem?</h1>
+    <div class="flex flex-col items-center">
+        <p id="playercountdiv" class="pb-8 text-xl">Antall Spillere: 0</p>
+    </div>
+    <div id="gamediv" class="flex justify-center items-center">        
+        <form class="space-x-5">
+            <label for="realname" class="text-blue-900"> Skriv inn ekte navnet ditt </label> 
+            <input type="text" id="realname" value="" class="border-2">
+            <label for="fakename" class="text-red-900"> Skriv inn falskt navnet ditt </label> 
+            <input type="text" id="fakename" value="" class="border-2">
+        </form>
+        <button id="check" onclick="submitInfo()" class="bg-slate-600 p-2 text-white rounded-xl font-mono ml-5">Sende inn</button>
+        <button id="startgame" onclick="startGame()" class="bg-slate-600 p-2 text-white rounded-xl font-mono ml-5">Start</button>
+    </div>
+    <p id="errormessage" class="text-red-500"></p>
+    <p id="playerturn" class="flex justify-center pt-10 text-xl"> Det er ingen sin tur! </p>
+    <div id="guessdiv" class="flex justify-center items-center pt-10 gap-2">
+        <select name="real-names" id="real-names" class="text-blue-800">
+            <option value="onerealname">Ekte Navn</option>
+        </select>
+        <p>  er </p>
+        <select name="fake-names" id="fake-names" class="text-red-800">
+            <option value="onefakename">Falskt Navn</option>
+        </select>
+        <button id="submitanswer" onclick="submitAnswer()" class="bg-slate-600 p-2 text-white rounded-xl font-mono ml-5">Gjett</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
